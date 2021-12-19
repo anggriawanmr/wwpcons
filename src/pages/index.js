@@ -16,6 +16,7 @@ import Subscribe from "../sections/subscribe";
 import FeaturedSpace from "../sections/featured-space";
 import Testimonials from "../sections/testimonials";
 import Dashboard from "sections/dashboard";
+import Faq from "sections/faq";
 
 export default function IndexPage() {
   return (
@@ -33,6 +34,7 @@ export default function IndexPage() {
           <TeamSection />
           <Testimonials />
           <BlogSection />
+          <Faq />
           <Subscribe />
         </Layout>
       </StickyProvider>
