@@ -14,32 +14,34 @@ import { keyframes } from '@emotion/core';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
+import Accordion from "components/accordion/accordion-faq";
 
-import ServiceThumb from 'assets/service-thumb.png';
-import shapePattern from 'assets/shape-pattern1.png';
-
-import Smart from 'assets/services/smart.svg';
-import Secure from 'assets/services/secure.svg';
+import ServiceThumb from "assets/service-thumb.png";
+import shapePattern from "assets/shape-pattern1.png";
 
 const data = {
-  subTitle: 'our services',
-  title: 'Business Goals Achieved with Design',
+  subTitle: "our services",
+  title: "Business Goals Achieved with Vision",
   features: [
     {
-      id: 1,
-      imgSrc: Smart,
-      altText: 'Smart Features',
-      title: 'Smart Features',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
+      isExpanded: true,
+      title: "Waste Water Treatment Plant",
+      contents: (
+        <div>
+          Get your website ads tests delivered at let collect sample from the victory of the
+          managments that supplies best design system which guidelines ever with multiple features.
+        </div>
+      ),
     },
     {
-      id: 2,
-      imgSrc: Secure,
-      altText: 'Secure Contents',
-      title: 'Secure Contents',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
+      isExpanded: false,
+      title: "General Contractor",
+      contents: (
+        <div>
+          Get your website ads tests delivered at let collect sample from the victory of the
+          managments that supplies best design system which guidelines ever with multiple features.
+        </div>
+      ),
     },
   ],
 };
@@ -52,15 +54,11 @@ export default function ServiceSection() {
     setVideoOpen(true);
   };
   return (
-    <section sx={{ variant: 'section.services' }}>
+    <section sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
           <Image src={ServiceThumb} alt="Thumbnail" />
-          <Button
-            sx={styles.videoBtn}
-            onClick={handleClick}
-            aria-label="Play Button"
-          >
+          <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
             <span>
               <IoIosPlay />
             </span>
@@ -74,16 +72,7 @@ export default function ServiceSection() {
           <TextFeature subTitle={data.subTitle} title={data.title} />
 
           <Grid sx={styles.grid}>
-            {data.features.map((item) => (
-              <Box sx={styles.card} key={item.id}>
-                <Image src={item.imgSrc} alt={item.altText} sx={styles.icon} />
-
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
-                </Box>
-              </Box>
-            ))}
+            <Accordion items={data.features} />
           </Grid>
         </Box>
       </Container>

@@ -8,7 +8,6 @@ import Banner from '../sections/banner';
 import KeyFeature from '../sections/key-feature';
 import ServiceSection from '../sections/service-section';
 import Feature from "../sections/feature";
-import WorkFlow from "../sections/workflow";
 import Package from "../sections/package";
 import TeamSection from "../sections/team-section";
 import BlogSection from "../sections/blog-section";

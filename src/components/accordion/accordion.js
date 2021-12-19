@@ -16,10 +16,7 @@ import {
 
 export default function Accordion({ items, ...props }) {
   return (
-    <BaseAccordion
-      stateReducer={combineReducers(single, preventClose)}
-      {...props}
-    >
+    <BaseAccordion stateReducer={combineReducers(single, preventClose)} {...props}>
       {({ openIndexes, handleItemClick }) => (
         <Fragment>
           {items.map((item, index) => (
@@ -27,17 +24,13 @@ export default function Accordion({ items, ...props }) {
               key={item.title}
               sx={styles.accordion}
               isOpen={openIndexes.includes(index)}
-              className={openIndexes.includes(index) ? 'is-open' : 'is-closed'}
             >
               <AccordionButton onClick={() => handleItemClick(index)}>
                 <Heading as="h4" sx={styles.title}>
                   {item.title}
                 </Heading>
               </AccordionButton>
-              <AccordionContents
-                isOpen={openIndexes.includes(index)}
-                sx={styles.content}
-              >
+              <AccordionContents isOpen={openIndexes.includes(index)} sx={styles.content}>
                 {item.contents}
               </AccordionContents>
               <ActionButton
