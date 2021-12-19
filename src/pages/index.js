@@ -15,6 +15,7 @@ import BlogSection from "../sections/blog-section";
 import Subscribe from "../sections/subscribe";
 import FeaturedSpace from "../sections/featured-space";
 import Testimonials from "../sections/testimonials";
+import Dashboard from "sections/dashboard";
 
 export default function IndexPage() {
   return (
@@ -27,7 +28,7 @@ export default function IndexPage() {
           <ServiceSection />
           <Feature />
           <FeaturedSpace />
-          <WorkFlow />
+          <Dashboard />
           <Package />
           <TeamSection />
           <Testimonials />
