@@ -6,6 +6,7 @@ import 'react-modal-video/css/modal-video.min.css';
 import 'rc-drawer/assets/index.css';
 import 'typeface-dm-sans';
 import "swiper/swiper-bundle.min.css";
+import "rc-tabs/assets/index.css";
 
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {

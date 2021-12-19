@@ -11,10 +11,10 @@ import Feature from "../sections/feature";
 import WorkFlow from "../sections/workflow";
 import Package from "../sections/package";
 import TeamSection from "../sections/team-section";
-import TestimonialCard from "../sections/testimonial";
 import BlogSection from "../sections/blog-section";
 import Subscribe from "../sections/subscribe";
 import FeaturedSpace from "../sections/featured-space";
+import Testimonials from "../sections/testimonials";
 
 export default function IndexPage() {
   return (
@@ -30,7 +30,7 @@ export default function IndexPage() {
           <WorkFlow />
           <Package />
           <TeamSection />
-          <TestimonialCard />
+          <Testimonials />
           <BlogSection />
           <Subscribe />
         </Layout>
