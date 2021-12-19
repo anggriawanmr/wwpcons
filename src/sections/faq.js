@@ -1,106 +1,162 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx, Box, Container, Button } from "theme-ui";
-import SectionHeading from "components/section-header";
-import Accordion from "components/accordion/accordion";
+import React from 'react';
+import { Box, Container, Flex, Text, Heading } from 'theme-ui';
+import { Link } from 'components/link';
+import BlockTitle from 'components/block-title';
+import Accordion from 'components/accordion/accordion';
 
-const data = [
+const accordionData = [
   {
-    id: 1,
-    title: `01. Which domain should I purchase?`,
+    isExpanded: false,
+    title: 'How much does it cost to be a credit card merchant?',
     contents: (
       <div>
-        Get your website tests delivered at the home collect a sample. Simply contact us and we'll
-        move your hosting account from any other provider, regardless of the control panel. If at
-        anytime your website is down for more than 0.1% result with proper investigation
-        experiments.
+        For our recent trip to S.A. I booked several accommodation thru SA
+        Places. I just wanted to tell you that everything worked out perfectly
+        with all the bookings and also your booking was very quick and
+        professional. I hope I have the opportunity to re-visit South Africa
+        soon, I will then make my bookings with your company again. I will also
+        recommend
       </div>
     ),
   },
   {
-    id: 2,
-    title: `02. What are some tips when choosing a name?`,
+    isExpanded: true,
+    title: 'How can I open a merchant account?',
     contents: (
       <div>
-        We make it easy to move to CometNine. Simply contact us and we'll move your hosting account
-        from any other provider, regardless of the control panel. If at anytime your website is down
-        for more than 0.1% result with proper investigation experiments.
+        For our recent trip to S.A. I booked several accommodation thru SA
+        Places. I just wanted to tell you that everything worked out perfectly
+        with all the bookings and also your booking was very quick and
+        professional. I hope I have the opportunity to re-visit South Africa
+        soon, I will then make my bookings with your company again. I will also
+        recommend
       </div>
     ),
   },
   {
-    id: 3,
-    title: `03. What if I need help choosing the right domain?`,
+    isExpanded: false,
+    title: 'How long does the application take?',
     contents: (
       <div>
-        Create a hub for cross-functional work that also works with all. Simply contact us and we'll
-        move your hosting account from any other provider, regardless of the control panel. If at
-        anytime your website is down for more than 0.1% result with proper investigation
-        experiments.
+        For our recent trip to S.A. I booked several accommodation thru SA
+        Places. I just wanted to tell you that everything worked out perfectly
+        with all the bookings and also your booking was very quick and
+        professional. I hope I have the opportunity to re-visit South Africa
+        soon, I will then make my bookings with your company again. I will also
+        recommend
       </div>
     ),
   },
   {
-    id: 4,
-    title: `04. Can I upgrade or downgrade my web hosting subscription system?`,
+    isExpanded: false,
+    title: 'Can I make payment outside of Hong Kong?',
     contents: (
       <div>
-        The pricing made me a little hesitant at first but I have been. Simply contact us and we'll
-        move your hosting account from any other provider, regardless of the control panel. If at
-        anytime your website is down for more than 0.1% result with proper investigation
-        experiments.
+        For our recent trip to S.A. I booked several accommodation thru SA
+        Places. I just wanted to tell you that everything worked out perfectly
+        with all the bookings and also your booking was very quick and
+        professional. I hope I have the opportunity to re-visit South Africa
+        soon, I will then make my bookings with your company again. I will also
+        recommend
       </div>
     ),
   },
   {
-    id: 5,
-    title: `05. Learn from community on Brandwagon`,
+    isExpanded: false,
+    title: 'How do I get the payment complete?',
     contents: (
       <div>
-        Stop your viewers from getting distracted. Publish videos to. Simply contact us and we'll
-        move your hosting account from any other provider, regardless of the control panel. If at
-        anytime your website is down for more than 0.1% result with proper investigation
-        experiments.
+        For our recent trip to S.A. I booked several accommodation thru SA
+        Places. I just wanted to tell you that everything worked out perfectly
+        with all the bookings and also your booking was very quick and
+        professional. I hope I have the opportunity to re-visit South Africa
+        soon, I will then make my bookings with your company again. I will also
+        recommend
       </div>
     ),
   },
 ];
 
-const Faq = () => {
+const FAQ = () => {
   return (
-    <section id="faq" sx={styles.section}>
+    <Box as="section">
       <Container>
-        <SectionHeading
-          sx={{ mb: [6, null, null, 12, 17] }}
-          slogan="Get your question answer"
-          title="Frequently asked question"
+        <BlockTitle
+          title="Frequently Ask Question"
+          text="Ask your question and meet"
         />
-
-        <Accordion items={data} />
+        <Flex sx={styles.flex}>
+          <Box sx={styles.faqWrapper}>
+            <Accordion items={accordionData} />
+          </Box>
+          <Box sx={styles.content}>
+            <Heading as="h3">
+              Do you have any quesiton? Please ask here we ready to support
+            </Heading>
+            <Text as="p">
+              If your question is not list here, please feel free to make a
+              manual support.
+            </Text>
+            <Link sx={styles.askButton} path="#">
+              Ask your Question
+            </Link>
+          </Box>
+        </Flex>
       </Container>
-    </section>
+    </Box>
   );
 };
 
-export default Faq;
+export default FAQ;
 
 const styles = {
-  section: {
-    pt: [6, null, null, null, 6, 10, 14],
-    pb: [12, null, null, null, 10, 22],
+  flex: {
+    flexWrap: 'wrap',
+    flexDirection: ['column', null, null, null, null, 'row-reverse'],
+    pb: ['70px', null, null, null, '90px', null, '130px'],
   },
-  loadMore: {
-    paddingTop: [3, null, null, 0],
-    textAlign: "center",
-    button: {
-      backgroundColor: "#ECF2F7",
-      color: "#738295",
-      minHeight: 50,
-      px: "22px",
-      ":hover": {
-        backgroundColor: "primary",
-        color: "white",
-      },
+  content: {
+    flex: ['0 0 100%', null, null, null, '0 0 33.333%'],
+    maxWidth: ['100%', null, null, '450px', '100%'],
+    mx: ['auto', null, null, null, '0'],
+    mb: ['0px', null, null, null, '0'],
+    textAlign: ['center', null, null, null, null, 'left'],
+    mt: ['40px', null, null, null, null, '0'],
+    h3: {
+      fontSize: ['23px', null, null, null, '24px'],
+      lineHeight: [1.5, null, null, null, 1.67],
+      color: 'black',
+      fontWeight: 700,
+      letterSpacing: '-1.5px',
+      mt: '-5px',
+      pr: ['0', null, null, null, null, '30px'],
     },
+    p: {
+      fontSize: '16px',
+      lineHeight: 1.87,
+      color: '#343D48',
+      opacity: 0.7,
+      mt: '10px',
+      pr: ['0', null, null, null, null, '80px'],
+    },
+  },
+  askButton: {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    backgroundColor: '#02073E',
+    color: '#fff',
+    borderRadius: '5px',
+    fontSize: '16px',
+    fontWeight: 700,
+    p: '6.5px 19px',
+    letterSpacing: '-0.16px',
+    mt: '25px',
+    transition: 'all 500ms ease',
+    '&:hover': {
+      opacity: 0.8,
+    },
+  },
+  faqWrapper: {
+    flex: ['0 0 100%', null, null, null, '0 0 66.666%'],
   },
 };
