@@ -8,9 +8,9 @@ import Image from "components/image";
 import expand from "assets/images/icons/expand.png";
 import users from "assets/images/icons/users.png";
 import wifi from "assets/images/icons/wifi.png";
-import slider1 from "assets/images/features/1.png";
-import slider2 from "assets/images/features/2.webp";
-import slider3 from "assets/images/features/3.png";
+import slider1 from "assets/images/features/1.jpg";
+import slider2 from "assets/images/features/2.jpg";
+import slider3 from "assets/images/features/3.jpg";
 
 import SwiperCore, { Autoplay, Pagination, EffectFade } from "swiper";
 // Import Swiper React components
@@ -23,40 +23,40 @@ const data = {
     {
       id: 1,
       icon: expand,
-      title: "1000 ft2",
-      description: "you will get 1000ft square space facility here.",
+      title: "1000 quart",
+      description: "you will get 1000 quart of pure water here.",
     },
     {
       id: 2,
       icon: users,
-      title: "80 Members",
-      description: "you will get advantage to live 80+ member here.",
+      title: "80+ Projects",
+      description: "We experienced on more than 80 Projects",
     },
     {
       id: 3,
       icon: wifi,
-      title: "100 mbps",
-      description: "Internet speed is much better than others.",
+      title: "100 WWTP",
+      description: "We have built more than 100 Waste Water Treatment Plant",
     },
   ],
   gallery: [
     {
       id: 1,
       image: slider1,
-      title: "Kin Co-working Space",
-      desc: "442 Broadway, New York",
+      title: "Tomb Excavation, GE",
+      desc: "Malang, Indonesia",
     },
     {
       id: 2,
       image: slider2,
-      title: "Kin Co-working Space",
-      desc: "212 Broadway, Jamaica",
+      title: "WWTP, Lesaffre",
+      desc: "Jakarta, Indonesia",
     },
     {
       id: 3,
       image: slider3,
-      title: "Kin Co-working Space",
-      desc: "212 Broadway, Houston",
+      title: "Road Construction, YTL",
+      desc: "Paiton, Indonesia",
     },
   ],
 };
@@ -107,11 +107,12 @@ const FeaturedSpace = () => {
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.leftContent}>
             <Heading as="h1" variant="heroPrimary">
-              Some good place to where can build your startup business
+              Best place to manage waste water
             </Heading>
             <Text as="p" variant="heroSecondary">
-              Co-working offers beautifully crafted workspaces where people can create, connect, and
-              grow their businesses at prime locations in multiple cities.
+              It's great, can you add a beard though we are a startup, for what you've given us is
+              texty, we want sexy or could you rotate the picture to show the other side of the
+              room? yet make it original.
             </Text>
             <Box sx={styles.featureWrapper}>
               {data?.feature?.map((feature) => (
@@ -240,6 +241,10 @@ const styles = {
   image: {
     position: "relative",
     display: "flex",
+    float: "left",
+    width: "800px",
+    height: "800px",
+    objectFit: "cover",
     alignItems: "flex-start",
     "> img": {
       borderRadius: 10,

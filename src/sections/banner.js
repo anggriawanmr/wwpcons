@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
-import BannerImg from "assets/banner-thumb.png";
+import BannerImg from "assets/banner-thumb.jpg";
 
 export default function Banner() {
   return (
@@ -9,13 +9,15 @@ export default function Banner() {
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading as="h1" variant="heroPrimary">
-            Top Quality Digital Products To Explore
+            Best Waste Water Treatment Plant Company
           </Heading>
           <Text as="p" variant="heroSecondary">
-            Get your blood tests delivered at let home collect sample from the victory of the
-            managements that supplies best design system guidelines ever.
+            This red is too red thats not what i saw in my head at all nor thats not what i saw in
+            my head at all the target audience is makes and famles aged zero and up
           </Text>
-          <Button variant="primary">Explore</Button>
+          <Button variant="primary" sx={styles.button}>
+            Explore
+          </Button>
         </Box>
 
         <Box sx={styles.banner.imageBox}>
@@ -31,6 +33,9 @@ const styles = {
     pt: ["140px", "145px", "155px", "170px", null, null, "180px", "215px"],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: "relative",
+    height: "100vh",
+    backgroundColor: "#000",
+    backgroundSize: "cover",
     zIndex: 2,
     "&::before": {
       position: "absolute",
@@ -74,10 +79,20 @@ const styles = {
       justifyContent: "center",
       textAlign: "center",
       display: "inline-flex",
+      width: "50%",
+      height: "50%",
       mb: [0, null, -6, null, null, "-40px", null, -3],
       img: {
         position: "relative",
         height: [245, "auto"],
+      },
+    },
+    button: {
+      ":hover": {
+        transform: "translateY(-5px)",
+      },
+      ":active": {
+        transform: "translateY(3px)",
       },
     },
   },
