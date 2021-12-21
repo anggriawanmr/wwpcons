@@ -89,7 +89,7 @@ const playPluse = keyframes`
   }
 
   to {
-	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+	  transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
     opacity: 0;
   }
 `;
@@ -98,6 +98,7 @@ const styles = {
   coreFeature: {
     py: [0, null, null, 2, null, 7],
     position: "relative",
+    height: "100vh",
   },
   containerBox: {
     display: "flex",

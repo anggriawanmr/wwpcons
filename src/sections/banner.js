@@ -1,9 +1,28 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
+import { Container, Box, Heading, Text, Image, Button, Link } from "theme-ui";
+import { keyframes } from "@emotion/core";
 import BannerImg from "assets/banner-thumb.jpg";
+import { IoIosArrowDown } from "react-icons/io";
+import { useEffect } from "react";
 
 export default function Banner() {
+  // const scroll = (e) => {
+  //   e.preventDefault();
+  //   window.scrollTo({
+  //     top: 700,
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  // const scrollTo = useEffect(() => {
+  //   window.addEventListener("click", scroll);
+
+  //   return () => {
+  //     window.removeEventListener("click", scroll);
+  //   };
+  // }, []);
+
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -24,9 +43,25 @@ export default function Banner() {
           <Image src={BannerImg} alt="banner" />
         </Box>
       </Container>
+      <Box sx={styles.scroll}>
+        <Text sx={styles.scrollText}>What's Next</Text>
+        <IoIosArrowDown sx={styles.scrollButton} />
+      </Box>
     </section>
   );
 }
+
+const scroll = keyframes`{
+  from {
+    transform: translate(2px, 0);
+    opacity: 1;
+  }
+
+  to {
+	  transform: translate(0, 15px);
+    opacity: 0;
+  
+}`;
 
 const styles = {
   banner: {
@@ -94,6 +129,32 @@ const styles = {
       ":active": {
         transform: "translateY(3px)",
       },
+    },
+  },
+  scroll: {
+    pt: "60px",
+    position: "absolute",
+    top: "95%",
+    left: "50%",
+    transform: "translate(-50%, -95%)",
+    color: "#fff",
+    textAlign: "center",
+    fontSize: "30px",
+  },
+  scrollText: {
+    fontSize: "15px",
+    textTransform: "uppercase",
+    boxSizing: "content-box",
+    ":hover": {
+      cursor: "pointer",
+    },
+  },
+  scrollButton: {
+    animation: `${scroll} 1.5s ease-out infinite`,
+    padding: 0,
+    margin: 0,
+    ":hover": {
+      cursor: "pointer",
     },
   },
 };
