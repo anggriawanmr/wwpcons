@@ -4,8 +4,11 @@ import { Container, Box, Heading, Text, Image, Button, Link } from "theme-ui";
 import { keyframes } from "@emotion/core";
 import { IoIosArrowDown } from "react-icons/io";
 import bannerVideo from "assets/bannerVideo.gif";
+import { useEffect } from "react";
+import Parallax from "parallax-js";
 
 export default function Banner() {
+  // MOVING TEXT ANIMATION
   const texts = [
     "Transparent",
     "Collaborative",
@@ -92,27 +95,31 @@ export default function Banner() {
     });
   };
 
-  _onMouseMove = () => {};
+  useEffect(function mount() {
+    var scene = document.getElementById("scene");
+    var parallaxInstance = new Parallax(scene);
+  });
 
   return (
-    <section sx={styles.banner} id="home" onMouseMove={this._onMouseMove}>
+    <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
-        <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
+        <Box sx={styles.banner.contentBox} id="scene">
+          <Heading as="h1" variant="heroPrimary" data-depth="0.5">
             The Most <Texts sx={styles.texts} waitbt={50} wait={2000} speed={27} texts={texts} />{" "}
-            Waste Water Treatment Company
+            Waste Water Treatment Plant
+            <Text as="p" variant="heroSecondary">
+              Wahana Wira Persada committed to excellence in everything we do. Our core values are
+              focused on workplace safety, integrity, quality construction and outstanding customer
+              service.
+            </Text>
           </Heading>
-
-          <Text as="p" variant="heroSecondary">
-            This red is too red thats not what i saw in my head at all nor thats not what i saw in
-            my head at all the target audience is makes and famles aged zero and up
-          </Text>
         </Box>
 
-        <Box sx={styles.banner.imageBox}>
-          <Image src={bannerVideo} alt="banner" />
+        <Box sx={styles.banner.imageBox} id="scene">
+          <Image src={bannerVideo} alt="banner" data-depth="0.5" />
         </Box>
       </Container>
+
       <Box sx={styles.scroll} onClick={scrolling}>
         <Text sx={styles.scrollText}>What's Next</Text>
         <IoIosArrowDown sx={styles.scrollButton} />
